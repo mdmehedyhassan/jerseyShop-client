@@ -8,16 +8,20 @@ const Home = () => {
 
     useEffect(() => {
         fetch('https://rhubarb-cobbler-32242.herokuapp.com/jerseys')
-        .then(res => res.json())
-        .then(data => setJerseys(data))
+            .then(res => res.json())
+            .then(data => setJerseys(data))
     }, [])
 
     return (
-        <div className="row">
+        <div >
             {
-                jerseys.map(jersey => <Jersey jersey={jersey} key={jersey._id} ></Jersey>)
+                <div className='justify-content-center'>
+                    <div className="d-flex flex-wrap p-5 justify-content-around">
+                        {jerseys.map(jersey => <Jersey jersey={jersey} key={jersey._id} ></Jersey>)}
+                    </div>
+                </div>
             }
-            
+
         </div>
     );
 };

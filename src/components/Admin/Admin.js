@@ -14,7 +14,7 @@ const Admin = () => {
             price: data.price,
             imageURL : imageURL
         }
-        const url =`http://localhost:5000/admin`;
+        const url =`https://rhubarb-cobbler-32242.herokuapp.com/admin`;
         fetch(url, {
             method: 'POST',
             headers: {
