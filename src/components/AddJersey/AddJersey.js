@@ -8,13 +8,13 @@ const AddJersey = () => {
     const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = data => {
-        const jerseyData ={
+        const jerseyData = {
             name: data.name,
             country: data.country,
             price: data.price,
-            imageURL : imageURL
+            imageURL: imageURL
         }
-        const url =`https://rhubarb-cobbler-32242.herokuapp.com/admin`;
+        const url = `https://rhubarb-cobbler-32242.herokuapp.com/admin`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -22,7 +22,7 @@ const AddJersey = () => {
             },
             body: JSON.stringify(jerseyData)
         })
-        .then(res => console.log('server site response', res))
+            .then(res => console.log('server site response', res))
     };
 
     const handleImageUpload = e => {
@@ -32,12 +32,12 @@ const AddJersey = () => {
         imageData.append('image', e.target.files[0])
 
         axios.post('https://api.imgbb.com/1/upload', imageData)
-          .then(function (response) {
-            setImageURL(response.data.data.display_url);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+            .then(function (response) {
+                setImageURL(response.data.data.display_url);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
     }
 
@@ -45,15 +45,28 @@ const AddJersey = () => {
         <div className="container">
             <h1>Add new jersey collection</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="name" placeholder="Enter Team Name" ref={register} />
-                <br/>
-                <input name="country" placeholder="Enter Country Name" ref={register} />
-                <br/>
-                <input type="number" name="price" placeholder="Enter Price" ref={register} />
-                <br/>
-                <input name="imageURL" type="file" onChange={handleImageUpload} />
-                <br/>
-                <input type="submit" />
+                <div className="d-flex  mt-5">
+                    <div className="d-flex flex-column m-2">
+                        <h5 >Add Team Name</h5>
+                        <input name="name" placeholder="Enter Team Name" ref={register} />
+                    </div>
+                    <div className="d-flex flex-column m-2">
+                        <h5 >Add Country Name</h5>
+                        <input name="country" placeholder="Enter Country Name" ref={register} />
+                    </div>
+                </div>
+                <div className="d-flex">
+                    <div className="d-flex flex-column m-2">
+                        <h5 >Add Price</h5>
+                        <input type="number" name="price" placeholder="Enter Price" ref={register} />
+                    </div>
+                    <div className="d-flex flex-column  m-2">
+                        <h5 >Add Photo</h5>
+                        <input name="imageURL" type="file" onChange={handleImageUpload} />
+                    </div>
+                </div>
+                <br />
+                <input type="submit" className="btn btn-success p-3" value="Save" />
             </form>
         </div>
     );
