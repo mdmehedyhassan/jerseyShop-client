@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Jersey = (props) => {
-    const { name, price, country, imageURL } = props.jersey;
+    const { name, price, country, imageURL, _id } = props.jersey;
     return (
         <div className="card bg-warning text-light overflow-hidden m-2" style={{ width: '18rem', borderRadius: '20px', border: '5px dotted blue'}}>
             <img src={imageURL}  alt="" />
