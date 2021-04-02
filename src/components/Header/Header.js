@@ -15,7 +15,7 @@ const Header = () => {
                     <Nav className="mr-auto " activeKey="/home">
                         <Link className="p-2" to="/home">Home</Link>
                         <Link className="p-2" to="/orders">Orders</Link>
-                        <Link className="p-2" to="/admin">Admin</Link>
+                        <Link className="p-2" to="/addJersey">Admin</Link>
                         <Nav.Link eventKey="disabled" disabled>Deals</Nav.Link>
                         <Link className="p-2" to="/login"><button className="btn btn-success">Login</button></Link>
                     </Nav>
