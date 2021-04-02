@@ -4,6 +4,8 @@ import 'firebase/auth';
 import firebaseConfig from './firebase.config';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -56,7 +58,7 @@ const Login = () => {
     }
     return (
         <div className="text-center p-5">
-            <button onClick={handleSignIn} className="mb-5 btn btn-outline-success rounded-pill">Continue with Google </button>
+            <button onClick={handleSignIn} className="mb-5 btn btn-outline-success rounded-pill"><FontAwesomeIcon icon={faGoogle} /> Continue with Google </button>
         </div>
     );
 };

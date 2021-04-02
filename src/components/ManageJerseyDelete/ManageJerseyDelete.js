@@ -3,7 +3,7 @@ import './ManageJerseyDelete.css'
 
 const ManageJerseyDelete = (props) => {
     const deleteJersey = id => {
-        
+        console.log('delete btn press')
     }
     const { name, price, country, _id } = props.manage;
     return (
