@@ -12,8 +12,8 @@ const Admin = () => {
     return (
         <div>
             <Router>
-                <div className="d-flex row">
-                    <div className="bg-dark text-light col-md-6 p-5">
+                <div className="row">
+                    <div className="bg-dark text-light col-xl-2 col-md-3 col-sm-4 p-3">
                         <ul>
                             <li>
                                 <Link className="text-light p-2" to="/manageJersey">Manage Jersey</Link>
@@ -25,7 +25,7 @@ const Admin = () => {
                     </div>
 
                     <hr />
-                    <div className="col-md-6">
+                    <div className="col-xl-10 col-md-9 col-sm-8">
                         <Switch>
                             <Route exact path="/addJersey">
                                 <AddJersey></AddJersey>

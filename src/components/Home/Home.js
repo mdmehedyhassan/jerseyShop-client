@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import Jersey from '../Jersey/Jersey ';
+import Jersey from '../Jersey/Jersey';
 
 const Home = () => {
     const [jerseys, setJerseys] = useState([])
@@ -13,15 +13,8 @@ const Home = () => {
     }, [])
 
     return (
-        <div >
-            {
-                <div className='justify-content-center'>
-                    <div className="d-flex flex-wrap p-5 justify-content-around">
-                        {jerseys.map(jersey => <Jersey jersey={jersey} key={jersey._id} ></Jersey>)}
-                    </div>
-                </div>
-            }
-
+        <div className="row">
+            {jerseys.map(jersey => <Jersey jersey={jersey} key={jersey._id} ></Jersey>)}
         </div>
     );
 };

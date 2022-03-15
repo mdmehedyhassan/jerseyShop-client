@@ -15,7 +15,6 @@ const ManageJersey = () => {
                     <th style={{ width: '20%' }}>Jersey Name</th>
                     <th style={{ width: '20%' }}>Country</th>
                     <th style={{ width: '20%' }}>Price</th>
-                    <th style={{ width: '20%' }}>Action</th>
                 </tr>
             </table>
             {

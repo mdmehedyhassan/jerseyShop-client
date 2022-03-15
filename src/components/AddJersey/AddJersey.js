@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from "react-hook-form";
 
 const AddJersey = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit } = useForm();
     const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = data => {
@@ -42,31 +42,32 @@ const AddJersey = () => {
     }
 
     return (
-        <div className="container">
-            <h1>Add new jersey collection</h1>
+        <div className="bg-secondary text-light">
+            <h1>Add new jersey</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="d-flex  mt-5">
                     <div className="d-flex flex-column m-2">
                         <h5 >Add Team Name</h5>
-                        <input name="name" placeholder="Enter Team Name" ref={register} />
+                        <input className="form-control" name="name" placeholder="Enter Team Name" ref={register} />
                     </div>
                     <div className="d-flex flex-column m-2">
                         <h5 >Add Country Name</h5>
-                        <input name="country" placeholder="Enter Country Name" ref={register} />
+                        <input className="form-control" name="country" placeholder="Enter Country Name" ref={register} />
                     </div>
                 </div>
                 <div className="d-flex">
                     <div className="d-flex flex-column m-2">
                         <h5 >Add Price</h5>
-                        <input type="number" name="price" placeholder="Enter Price" ref={register} />
+                        <input className="form-control" type="number" name="price" placeholder="Enter Price" ref={register} />
                     </div>
                     <div className="d-flex flex-column  m-2">
                         <h5 >Add Photo</h5>
                         <input name="imageURL" type="file" onChange={handleImageUpload} />
                     </div>
                 </div>
-                <br />
-                <input type="submit" className="btn btn-success p-3" value="Save" />
+                <div className="p-2">
+                    <input type="submit" className="btn btn-success" value="Save" />
+                </div>
             </form>
         </div>
     );
